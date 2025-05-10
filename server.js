@@ -28,6 +28,6 @@ app.use('/clientes', productRoutes);
 app.use('/api/clientes', productRoutes);
 
 // Iniciar servidor
-app.listen(PORT, () => {
+app.listen(3000, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

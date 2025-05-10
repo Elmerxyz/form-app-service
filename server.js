@@ -3,8 +3,7 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const cors = require('cors');
-const app = express();
-const PORT = process.env.PORT || 3000;
+const app = express(); 
 
 // Importar rutas
 const productRoutes = require('./app/routes/clientRoutes');
@@ -29,5 +28,5 @@ app.use('/api/clientes', productRoutes);
 
 // Iniciar servidor
 app.listen(3000, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log('corriendo');
 });

@@ -1,4 +1,4 @@
-require('dotenv').config();
+ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
@@ -6,8 +6,8 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const clienteController = require('../controllers/clienteController');
-
+// Importar rutas
+const productRoutes = require('./app/routes/clientRoutes');
 
 // Middlewares
 app.use(cors());
@@ -24,9 +24,9 @@ app.use(express.static(path.join(__dirname, 'app/views')));
 app.get('/', (req, res) => {
   res.redirect('/clientes');
 });
+app.use('/clientes', productRoutes);
+app.use('/api/clientes', productRoutes);
 
-router.post('/clientes', clienteController.createCliente);
-router.post('/api/clientes', clienteController.createCliente);
 // Iniciar servidor
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);

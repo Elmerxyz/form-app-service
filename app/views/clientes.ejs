@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> - Sistema de Clientes</title>
+  <link rel="stylesheet" href="/css/style.css"> <!-- Ruta relativa a public -->
+</head>
+<body>
+ <div class="client-list">
+  <% if (clientes && clientes.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Fecha Registro</th>
+          <th>Bienvenida</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% clientes.forEach(cliente => { %>
+          <tr>
+            <td><%= cliente.id %></td>
+            <td><%= cliente.nombre %></td>
+            <td><%= cliente.correo %></td>
+            <td><%= cliente.fecha_registro.toLocaleString() %></td>
+            <td>
+              <% if (cliente.bienvenida_enviada) { %>
+                ✅ Enviada
+              <% } else { %>
+                ❌ Pendiente
+              <% } %>
+            </td>
+            <td class="actions">
+              <a href="/clientes/<%= cliente.id %>" class="btn btn-info">Ver</a>
+              <a href="/clientes/<%= cliente.id %>/editar" class="btn btn-edit">Editar</a>
+              <form action="/clientes/<%= cliente.id %>" method="POST" class="delete-form">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-delete" onclick="return confirm('¿Estás seguro de eliminar este cliente?')">Eliminar</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <p class="no-clients">No hay clientes registrados.</p>
+  <% } %>
+
+  <div class="actions">
+    <a href="/clientes/nuevo" class="btn btn-primary">Nuevo Cliente</a>
+  </div>
+</div>
+</body>
+</html>

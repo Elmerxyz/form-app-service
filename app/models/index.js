@@ -5,7 +5,7 @@ const Cliente = require('./client');
 const syncModels = async () => {
   try {
     await sequelize.sync({ alter: true });
-    console.log('Modelos sincronizados con la base de datos');
+    console.log('Modelos sincronizados con la base de,, datos');
   } catch (error) {
     console.error('Error al sincronizar modelos:', error);
   }

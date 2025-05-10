@@ -1,0 +1,17 @@
+<div class="new-client-form">
+  <h2>Registrar Nuevo Cliente</h2>
+  <form action="/clientes" method="POST">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+    </div>
+
+    <div class="form-group">
+      <label for="correo">Correo:</label>
+      <input type="email" id="correo" name="correo" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Registrar Cliente</button>
+    <a href="/clientes" class="btn btn-cancel">Cancelar</a>
+  </form>
+</div>

@@ -1,0 +1,57 @@
+.client-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.client-list th, .client-list td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.client-list .actions {
+  display: flex;
+  gap: 5px;
+}
+.btn {
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.btn-info { background-color: #17a2b8; color: white; }
+.btn-edit { background-color: #ffc107; color: white; }
+.btn-delete { background-color: #dc3545; color: white; border: none; cursor: pointer; }
+.btn-primary { background-color: #28a745; color: white; }
+.no-clients { text-align: center; padding: 20px; color: #888; }
+.new-client-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.new-client-form h2 {
+  text-align: center;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.btn {
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.btn-primary {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+.btn-cancel {
+  background-color: #6c757d;
+  color: white;
+  margin-left: 10px;
+}

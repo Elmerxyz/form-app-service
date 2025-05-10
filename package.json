@@ -1,5 +1,5 @@
 {
-  "name": "productos-api",
+  "name": "api",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "ISC|",
   "description": "API de productos con Express y Sequelize",
   "dependencies": {
     "cors": "^2.8.5",
